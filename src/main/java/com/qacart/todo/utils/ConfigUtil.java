@@ -11,13 +11,25 @@ import java.util.Properties;
 
 public class ConfigUtil {
 
-    private Properties properties;
+    private final Properties properties;
     private static ConfigUtil configUtil;
 
     // Private constructor to load the properties only once
     private ConfigUtil() throws IOException {
 
-        properties = PropertiesUtil.loadProperties("src/test/resources/config/production.properties");
+        String env = System.getProperty("env", "PRODUCTION").toUpperCase();
+        switch (env) {
+            case "PRODUCTION":
+                System.out.println("Loading production properties");
+                properties = PropertiesUtil.loadProperties("src/test/resources/config/production.properties");
+                break;
+            case "LOCAL":
+                System.out.println("Loading local properties");
+                properties = PropertiesUtil.loadProperties("src/test/resources/config/local.properties");
+                break;
+            default:
+                throw new RuntimeException("Environment not supported: " + env);
+        }
     }
 
     // Returns a shared instance of ConfigUtil
