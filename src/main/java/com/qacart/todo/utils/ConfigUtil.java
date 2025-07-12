@@ -36,4 +36,22 @@ public class ConfigUtil {
         }
         throw new RuntimeException("Base URL not found in properties file");
     }
+
+    // Returns the email, or throws an exception if missing
+    public String getEmail() {
+        String prop = properties.getProperty("email");
+        if (prop != null) {
+            return prop;
+        }
+        throw new RuntimeException("Email not found in properties file");
+    }
+
+    // Returns the password, or throws an exception if missing
+    public String getPassword() {
+        String prop = properties.getProperty("password");
+        if (prop != null) {
+            return prop;
+        }
+        throw new RuntimeException("Password not found in properties file");
+    }
 }

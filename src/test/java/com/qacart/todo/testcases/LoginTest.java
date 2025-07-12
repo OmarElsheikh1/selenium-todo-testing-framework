@@ -3,6 +3,7 @@ package com.qacart.todo.testcases;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
 import com.qacart.todo.pages.TodoPage;
+import com.qacart.todo.utils.ConfigUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,7 +22,7 @@ public class LoginTest extends BaseTest {
         boolean isWelcomeDisplayed =
                 loginPage
                         .load()
-                        .login("omar1@example.com", "Test1234")
+                        .login(ConfigUtil.getInstance().getEmail(), ConfigUtil.getInstance().getPassword())
                         .isWelcomeMessageDisplayed();
 
 

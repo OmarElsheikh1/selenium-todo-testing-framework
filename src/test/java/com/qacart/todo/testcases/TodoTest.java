@@ -4,6 +4,7 @@ import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
 import com.qacart.todo.pages.NewTodoPage;
 import com.qacart.todo.pages.TodoPage;
+import com.qacart.todo.utils.ConfigUtil;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,7 +25,7 @@ public class TodoTest extends BaseTest {
         String actualResult =
                 loginPage
                         .load()
-                        .login("omar1@example.com", "Test1234")
+                        .login(ConfigUtil.getInstance().getEmail(), ConfigUtil.getInstance().getPassword())
                         .clickAddTodoButton()
                         .addNewTodo("Learn Selenium")
                         .getTodoText();
@@ -45,7 +46,7 @@ public class TodoTest extends BaseTest {
         boolean isNoTodoDisplayed =
                 loginPage
                         .load()
-                        .login("omar1@example.com", "Test1234")
+                        .login(ConfigUtil.getInstance().getEmail(), ConfigUtil.getInstance().getPassword())
                         .clickAddTodoButton()
                         .addNewTodo("Learn Selenium").clickDeleteTodo().isNoTodoMessageDisplayed();
 
