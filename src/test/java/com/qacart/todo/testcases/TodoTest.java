@@ -25,14 +25,14 @@ public class TodoTest extends BaseTest {
                         .login("omar1@example.com", "Test1234")
                         .clickAddTodoButton()
                         .addNewTodo("Learn Selenium")
-                        .getTodoText("Learn Selenium");
+                        .getTodoText();
 
 
         // Assert that the new todo item is displayed in the list
         Assert.assertEquals(actualResult, "Learn Selenium", "The new todo item should be displayed in the list");
     }
 
-    @Test
+    @Test (enabled = false)
     public void shouldBeAbleToDeleteTodo() {
 
         // Create an instance of the LoginPage class

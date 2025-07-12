@@ -28,13 +28,15 @@ public class LoginPage extends BasePage {
 
     // Individual actions
     // Enters the given email into the email field
-    public void enterEmail(String email) {
+    public LoginPage enterEmail(String email) {
         driver.findElement(emailField).sendKeys(email);
+        return this;
     }
 
     // Enters the given password into the password field
-    public void enterPassword(String password) {
+    public LoginPage enterPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
+        return this;
     }
 
     // Clicks the login button

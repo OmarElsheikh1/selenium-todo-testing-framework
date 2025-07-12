@@ -45,7 +45,7 @@ public class TodoPage extends BasePage {
     }
 
     // Retrieves the text of a todo item
-    public String getTodoText(String todoText) {
+    public String getTodoText() {
         return driver.findElement(todoItem).getText();
     }
 
