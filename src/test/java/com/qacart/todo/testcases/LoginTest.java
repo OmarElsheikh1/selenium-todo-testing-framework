@@ -6,10 +6,12 @@ import com.qacart.todo.pages.TodoPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class LoginTest extends BaseTest {
 
     @Test
-    public void shouldBeAbleToLoginWithEmailAndPassword() {
+    public void shouldBeAbleToLoginWithEmailAndPassword() throws IOException {
 
         // Create an instance of the LoginPage class
         LoginPage loginPage = new LoginPage(driver);

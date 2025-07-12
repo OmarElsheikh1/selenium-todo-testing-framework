@@ -8,11 +8,13 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 
 public class TodoTest extends BaseTest {
 
     @Test
-    public void shouldBeAbleToAddNewTodo() {
+    public void shouldBeAbleToAddNewTodo() throws IOException {
 
         // Create an instance of the LoginPage class
         LoginPage loginPage = new LoginPage(driver);
@@ -32,8 +34,8 @@ public class TodoTest extends BaseTest {
         Assert.assertEquals(actualResult, "Learn Selenium", "The new todo item should be displayed in the list");
     }
 
-    @Test (enabled = false)
-    public void shouldBeAbleToDeleteTodo() {
+    @Test(enabled = false)
+    public void shouldBeAbleToDeleteTodo() throws IOException {
 
         // Create an instance of the LoginPage class
         LoginPage loginPage = new LoginPage(driver);

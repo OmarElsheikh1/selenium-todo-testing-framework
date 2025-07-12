@@ -1,8 +1,12 @@
 package com.qacart.todo.pages;
 
+import com.qacart.todo.utils.PropertiesUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.bidi.log.Log;
+
+import java.io.IOException;
+import java.util.Properties;
 
 public class LoginPage extends BasePage {
 
@@ -19,9 +23,16 @@ public class LoginPage extends BasePage {
     private final By loginButton = By.id("submit");
 
 
-    // Load the login page by navigating to the application URL, used method chaining
-    public LoginPage load() {
-        driver.get("https://todo.qacart.com/");
+    // Loads the login page using the URL from the properties file (supports method chaining)
+    public LoginPage load() throws IOException {
+
+        // Step 1: Load the properties from the production.properties file
+        Properties props = PropertiesUtil.loadProperties("src/test/resources/config/production.properties");
+
+        // Step 2: Read the base URL from the loaded properties and open it in the browser
+        driver.get(props.getProperty("baseUrl"));
+
+        // Step 3: Return the current LoginPage instance for method chaining
         return this;
     }
 
