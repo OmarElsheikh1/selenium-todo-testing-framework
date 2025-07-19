@@ -1,5 +1,6 @@
 package com.qacart.todo.pages;
 
+import com.qacart.todo.api.config.Endpoints;
 import com.qacart.todo.utils.ConfigUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,7 @@ public class NewTodoPage extends BasePage {
 
     // Method to navigate to the New Todo page
     public NewTodoPage load() throws IOException {
-        driver.get(ConfigUtil.getInstance().getBaseUrl() + "todo/new");
+        driver.get(ConfigUtil.getInstance().getBaseUrl() + Endpoints.NEW_TODO_END_POINT);
         return this;
     }
 

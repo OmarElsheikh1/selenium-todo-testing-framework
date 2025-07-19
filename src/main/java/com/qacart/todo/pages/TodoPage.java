@@ -1,5 +1,6 @@
 package com.qacart.todo.pages;
 
+import com.qacart.todo.api.config.Endpoints;
 import com.qacart.todo.utils.ConfigUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +28,7 @@ public class TodoPage extends BasePage {
 
     // Opens the Todo page using the base URL from the config file
     public TodoPage load() throws IOException {
-        driver.get(ConfigUtil.getInstance().getBaseUrl() + "todo");
+        driver.get(ConfigUtil.getInstance().getBaseUrl() + Endpoints.TODO_END_POINT);
         return this;
     }
 
