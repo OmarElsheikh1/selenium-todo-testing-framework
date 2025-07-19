@@ -17,6 +17,7 @@ public class ConfigUtil {
     // Private constructor to load the properties only once
     private ConfigUtil() throws IOException {
 
+        // Determine the environment from system properties or default to PRODUCTION
         String env = System.getProperty("env", "PRODUCTION").toUpperCase();
         switch (env) {
             case "PRODUCTION":

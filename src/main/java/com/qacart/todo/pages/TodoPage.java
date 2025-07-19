@@ -1,7 +1,10 @@
 package com.qacart.todo.pages;
 
+import com.qacart.todo.utils.ConfigUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.io.IOException;
 
 
 public class TodoPage extends BasePage {
@@ -21,6 +24,12 @@ public class TodoPage extends BasePage {
     private final By todoItem = By.cssSelector("[data-testid=\"todo-item\"]");
     private final By todoList = By.cssSelector("[data-testid=\"no-todos\"]");
 
+
+    // Opens the Todo page using the base URL from the config file
+    public TodoPage load() throws IOException {
+        driver.get(ConfigUtil.getInstance().getBaseUrl() + "todo");
+        return this;
+    }
 
     // Clicks the "Add Todo" button
     public NewTodoPage clickAddTodoButton() {

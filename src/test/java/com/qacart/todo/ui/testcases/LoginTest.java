@@ -1,4 +1,4 @@
-package com.qacart.todo.testcases;
+package com.qacart.todo.ui.testcases;
 
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
