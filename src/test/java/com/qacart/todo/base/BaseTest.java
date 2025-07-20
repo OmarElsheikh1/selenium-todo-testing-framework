@@ -16,21 +16,30 @@ import java.util.List;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    public void setDriver(WebDriver driver) {
+        this.driver.set(driver);
+    }
+
+    public WebDriver getDriver() {
+        return this.driver.get();
+    }
 
     @BeforeMethod
     public void setUp() {
         // Create an instance of DriverFactory
         // Initialize the WebDriver instance using the non-static method
-        DriverFactory driverFactory = new DriverFactory();
-        driver = driverFactory.initDriver();
+        WebDriver driver = new DriverFactory().initDriver();
+        setDriver(driver);
     }
 
     @AfterMethod
     public void tearDown() {
         // Quit the driver after each test method
-        if (driver != null) {
-            driver.quit(); // Close the browser
+        if (getDriver() != null) {
+            getDriver().quit(); // Close the browser
+            driver.remove(); // Remove the driver from ThreadLocal to prevent memory leaks
         }
     }
 
@@ -40,7 +49,7 @@ public class BaseTest {
 
         for (org.openqa.selenium.Cookie cookie : seleniumCookies) {
             // Add each Selenium cookie to the browser's cookie store
-            driver.manage().addCookie(cookie);
+            getDriver().manage().addCookie(cookie);
         }
     }
 }

@@ -12,6 +12,7 @@ public class TodoPage extends BasePage {
 
     // Constructor - accepts the WebDriver instance from the test class
     // This allows the page class to interact with the same browser session
+    // super(driver) is used so the driver value is taken from here and is sent to the parent class
     public TodoPage(WebDriver driver) {
         super(driver);
     }

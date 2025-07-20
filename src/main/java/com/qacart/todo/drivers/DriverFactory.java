@@ -39,7 +39,7 @@ public class DriverFactory {
     }
 
     public WebDriver openUrl(String url) {
-        driver.get("https://todo.qacart.com/");
+        driver.get("https://todo.qacart.com");
         return driver;
     }
 }
