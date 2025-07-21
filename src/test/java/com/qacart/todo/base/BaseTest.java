@@ -71,6 +71,7 @@ public class BaseTest {
         }
     }
 
+    // Method to take a screenshot after each test
     public void takeScreenshot(File destinationFile) throws IOException {
 
         // Capture a screenshot after each test by casting WebDriver to TakesScreenshot.
