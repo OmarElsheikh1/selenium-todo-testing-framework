@@ -2,6 +2,7 @@ package com.qacart.todo.pages;
 
 import com.qacart.todo.api.config.Endpoints;
 import com.qacart.todo.utils.ConfigUtil;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,12 +23,14 @@ public class NewTodoPage extends BasePage {
 
 
 
+    @Step
     // Method to navigate to the New Todo page
     public NewTodoPage load() throws IOException {
         driver.get(ConfigUtil.getInstance().getBaseUrl() + Endpoints.NEW_TODO_END_POINT);
         return this;
     }
 
+    @Step
     // Method to add a new todo item and create it
     public TodoPage addNewTodo(String todoText) {
         driver.findElement(enterNewTodo).sendKeys(todoText);
@@ -35,6 +38,7 @@ public class NewTodoPage extends BasePage {
         return new TodoPage(driver);
     }
 
+    @Step
     // Method to click the "Create Todo" button separately
     public void clickCreateTodoButton() {
         driver.findElement(createTodoButton).click();

@@ -5,6 +5,8 @@ import com.qacart.todo.api.requests.TasksApi;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.NewTodoPage;
 import com.qacart.todo.pages.TodoPage;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,9 +19,11 @@ import java.time.Duration;
 import java.util.Set;
 
 
+@Feature("Todo Feature")
 public class TodoTest extends BaseTest {
 
-    @Test
+    @Story("Cookies Test")
+    @Test(description = "Test that cookies are available after login")
     public void testTest() throws InterruptedException {
 
         getDriver().get("https://todo.qacart.com");
@@ -50,7 +54,8 @@ public class TodoTest extends BaseTest {
     }
 
 
-    @Test
+    @Story("Add Todo")
+    @Test(description = "Should be able to add a new todo item")
     public void shouldBeAbleToAddNewTodo() throws IOException {
 
         RegisterApi registerApi = new RegisterApi();
@@ -70,7 +75,8 @@ public class TodoTest extends BaseTest {
     }
 
 
-    @Test(enabled = true)
+    @Story("Delete Todo")
+    @Test(description = "Should be able to delete a todo item")
     public void shouldBeAbleToDeleteTodo() throws IOException {
 
         // Register a new user and get the cookies
