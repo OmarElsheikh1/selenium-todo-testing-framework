@@ -1,6 +1,8 @@
 # Todo Automation Testing Framework 🧪
 
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/OmarElsheikh1/selenium-todo-testing-framework/main.yml?label=Build&logo=githubactions)](https://github.com/OmarElsheikh1/selenium-todo-testing-framework/actions)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/OmarElsheikh1/selenium-todo-testing-framework)
+
 
 [![Java](https://img.shields.io/badge/Java-21-blue?logo=java)](https://docs.oracle.com/en/java/javase/21/)
 [![Selenium](https://img.shields.io/badge/Selenium-4.x-green?logo=selenium)](https://www.selenium.dev/documentation/)
@@ -8,6 +10,7 @@
 [![TestNG](https://img.shields.io/badge/TestNG-7.8-red?logo=testng)](https://testng.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.8+-brightgreen?logo=apachemaven)](https://maven.apache.org/)
 [![Allure](https://img.shields.io/badge/Allure-2.20.1-magenta?logo=allure)](https://docs.qameta.io/allure/)
+
 
 A hybrid UI & API test automation framework for the [QACart Todo App](https://todo.qacart.com) built with Java, Selenium WebDriver, REST Assured, Cucumber, and TestNG.
 It follows the Page Object Model (POM) design pattern, supports cross-browser execution, integrates API testing, and is structured for maintainability and CI/CD pipelines.
