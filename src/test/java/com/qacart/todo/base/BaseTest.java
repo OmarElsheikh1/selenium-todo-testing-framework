@@ -60,6 +60,7 @@ public class BaseTest {
         }
     }
 
+    // Method to inject cookies into the browser
     @Step
     public void injectCookiesToBrowser(List<io.restassured.http.Cookie> restAssuredCookies) {
 
