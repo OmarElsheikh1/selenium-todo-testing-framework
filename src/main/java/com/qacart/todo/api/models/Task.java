@@ -26,6 +26,4 @@ public class Task {
     public void setItem(String item) {
         this.item = item;
     }
-
-
 }

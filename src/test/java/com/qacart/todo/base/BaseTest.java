@@ -22,7 +22,6 @@ import java.util.List;
  * BaseTest class serves as a base class for all test classes in the application.
  * It initializes the WebDriver instance before each test method and quits it after each test method.
  */
-
 public class BaseTest {
 
     protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
